@@ -1,0 +1,6 @@
+com.unisound.sdk.asr
+com.unisound.sdk.asr.audiosource
+com.unisound.sdk.asr.impl
+com.unisound.sdk.asr.vad
+com.unisound.sdk.tts
+com.unisound.sdk.tts.impl

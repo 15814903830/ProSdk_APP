@@ -1,0 +1,29 @@
+package com.zero.ci.refresh.api;
+
+import android.view.View;
+
+/**
+ * Author: Zero Yuan
+ * Email: zero.yuan.xin@gmail.com
+ * Description: 滚动边界
+ * -------------------------------
+ */
+
+public interface ScrollBoundaryDecider {
+
+    /**
+     * 根据内容视图状态判断是否可以开始下拉刷新
+     *
+     * @param content 内容视图
+     * @return true 将会触发下拉刷新
+     */
+    boolean isCanRefresh(View content);
+
+    /**
+     * 根据内容视图状态判断是否可以开始上拉加载
+     *
+     * @param content 内容视图
+     * @return true 将会触发加载更多
+     */
+    boolean isCanLoadMore(View content);
+}

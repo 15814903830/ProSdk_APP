@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="zrlDrawableSize" format="dimension"/><!--图片尺寸-->
+    <attr name="zrlDrawableArrowSize" format="dimension"/><!--箭头图片尺寸-->
+    <attr name="zrlDrawableProgressSize" format="dimension"/><!--箭头图片尺寸-->
+    <attr name="zrlDrawableMarginRight" format="dimension"/><!--图片和文字的间距-->
+    <attr name="zrlTextSizeTitle" format="dimension"/><!--标题字体-->
+    <attr name="zrlTextSizeTime" format="dimension"/><!--时间字体-->
+    <attr name="zrlFinishDuration" format="integer"/><!--完成时停留时间-->
+    <attr name="zrlPrimaryColor" format="color"/><!--主要颜色-->
+    <attr name="zrlAccentColor" format="color"/><!--强调颜色-->
+    <attr name="zrlDrawableArrow" format="reference"/><!--箭头图片-->
+    <attr name="zrlDrawableProgress" format="reference"/><!--转动图片-->
+    <attr name="zrlEnableHorizontalDrag" format="boolean"/><!--支持水平拖动-->
+
+    <attr name="zrlClassicsSpinnerStyle" format="enum">
+        <enum name="Translate" value="0"/><!--平行移动-->
+        <enum name="Scale" value="1"/><!--拉伸形变-->
+        <enum name="FixedBehind" value="2"/><!--固定在背后-->
+    </attr>
+
+    <attr name="layout_zrlSpinnerStyle" format="enum">
+        <enum name="Translate" value="0"/><!--平行移动-->
+        <enum name="Scale" value="1"/><!--拉伸形变-->
+        <enum name="FixedBehind" value="2"/><!--固定在背后-->
+        <enum name="FixedFront" value="3"/><!--固定在前面-->
+        <enum name="MatchLayout" value="4"/><!--填满布局-->
+    </attr>
+
+    <declare-styleable name="ZRefreshLayout">
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlReboundDuration" format="integer"/>
+        <attr name="zrlHeaderHeight" format="dimension"/>
+        <attr name="zrlFooterHeight" format="dimension"/>
+        <attr name="zrlHeaderInsetStart" format="dimension"/>
+        <attr name="zrlFooterInsetStart" format="dimension"/>
+        <attr name="zrlDragRate" format="float"/>
+        <attr name="zrlHeaderMaxDragRate" format="float"/>
+        <attr name="zrlFooterMaxDragRate" format="float"/>
+        <attr name="zrlHeaderTriggerRate" format="float"/>
+        <attr name="zrlFooterTriggerRate" format="float"/>
+        <attr name="zrlEnableRefresh" format="boolean"/>
+        <attr name="zrlEnableLoadMore" format="boolean"/>
+        <attr name="zrlEnableHeaderTranslationContent" format="boolean"/>
+        <attr name="zrlEnableFooterTranslationContent" format="boolean"/>
+        <attr name="zrlHeaderTranslationViewId" format="reference"/>
+        <attr name="zrlFooterTranslationViewId" format="reference"/>
+        <attr name="zrlEnablePreviewInEditMode" format="boolean"/>
+        <attr name="zrlEnableAutoLoadMore" format="boolean"/>
+        <attr name="zrlEnableOverScrollBounce" format="boolean"/>
+        <attr name="zrlEnablePureScrollMode" format="boolean"/>
+        <attr name="zrlEnableNestedScrolling" format="boolean"/>
+        <attr name="zrlEnableScrollContentWhenLoaded" format="boolean"/>
+        <attr name="zrlEnableScrollContentWhenRefreshed" format="boolean"/>
+        <attr name="zrlEnableLoadMoreWhenContentNotFull" format="boolean"/>
+        <attr name="zrlEnableFooterFollowWhenLoadFinished" format="boolean"/>
+        <attr name="zrlEnableClipHeaderWhenFixedBehind" format="boolean"/>
+        <attr name="zrlEnableClipFooterWhenFixedBehind" format="boolean"/>
+        <attr name="zrlEnableOverScrollDrag" format="boolean"/>
+        <attr name="zrlDisableContentWhenRefresh" format="boolean"/>
+        <attr name="zrlDisableContentWhenLoading" format="boolean"/>
+        <attr name="zrlFixedHeaderViewId" format="reference"/>
+        <attr name="zrlFixedFooterViewId" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="ZRefreshLayout_Layout">
+        <attr name="layout_zrlSpinnerStyle"/>
+        <attr name="layout_zrlBackgroundColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="BezierRadarHeader">
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlEnableHorizontalDrag"/>
+    </declare-styleable>
+
+    <declare-styleable name="BallPulseFooter">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr name="zrlAnimatingColor" format="color"/>
+        <attr name="zrlNormalColor" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="ClassicsHeader">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlFinishDuration"/>
+        <attr name="zrlDrawableArrow"/>
+        <attr name="zrlDrawableProgress"/>
+        <attr name="zrlDrawableMarginRight"/>
+        <attr name="zrlDrawableSize"/>
+        <attr name="zrlDrawableArrowSize"/>
+        <attr name="zrlDrawableProgressSize"/>
+        <attr name="zrlTitleTextSize"/>
+        <attr name="zrlTimeTextSize"/>
+        <attr name="zrlTopTextTimeMargin" format="dimension"/>
+        <attr name="zrlEnableLastTime" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="ClassicsFooter">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlFinishDuration"/>
+        <attr name="zrlTitleTextSize"/>
+        <attr name="zrlDrawableArrow"/>
+        <attr name="zrlDrawableProgress"/>
+        <attr name="zrlDrawableMarginRight"/>
+        <attr name="zrlDrawableSize"/>
+        <attr name="zrlDrawableArrowSize"/>
+        <attr name="zrlDrawableProgressSize"/>
+    </declare-styleable>
+
+    <declare-styleable name="TwoLevelHeader">
+        <attr name="zrlMaxRage" format="float"/>
+        <attr name="zrlFloorRage" format="float"/>
+        <attr name="zrlRefreshRage" format="float"/>
+        <attr name="zrlFloorDuration" format="integer"/>
+        <attr name="zrlEnableTwoLevel" format="boolean"/>
+        <attr name="zrlEnablePullToCloseTwoLevel" format="boolean"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="MaterialHeader">
+        <attr name="mhPrimaryColor" format="color" />
+        <attr name="mhShadowColor" format="color" />
+        <attr name="mhShadowRadius" format="dimension"/>
+        <attr name="mhShowBezierWave" format="boolean"/>
+    </declare-styleable>
+</resources>

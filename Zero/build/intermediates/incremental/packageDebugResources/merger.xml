@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main$Generated" generated="true"><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res"/><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\build\generated\res\rs\debug"/><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\build\generated\res\resValues\debug"/></dataSet><dataSet config="main" generated-set="main$Generated"><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res"><file name="anim_bottom_in" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_bottom_in.xml" qualifiers="" type="anim"/><file name="anim_bottom_out" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_bottom_out.xml" qualifiers="" type="anim"/><file name="anim_left_in" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_left_in.xml" qualifiers="" type="anim"/><file name="anim_left_out" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_left_out.xml" qualifiers="" type="anim"/><file name="anim_right_in" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_right_in.xml" qualifiers="" type="anim"/><file name="anim_right_out" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_right_out.xml" qualifiers="" type="anim"/><file name="anim_top_in" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_top_in.xml" qualifiers="" type="anim"/><file name="anim_top_out" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\anim\anim_top_out.xml" qualifiers="" type="anim"/><file name="dialog_background" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\dialog_background.xml" qualifiers="" type="drawable"/><file name="nice_spinner_arrow" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\nice_spinner_arrow.xml" qualifiers="" type="drawable"/><file name="nice_spinner_drawable" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\nice_spinner_drawable.xml" qualifiers="" type="drawable"/><file name="nice_spinner_selector" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\nice_spinner_selector.xml" qualifiers="" type="drawable"/><file name="shadow" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\shadow.xml" qualifiers="" type="drawable"/><file name="tab_bubble_circle" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\tab_bubble_circle.xml" qualifiers="" type="drawable"/><file name="tab_button_text_selector" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable\tab_button_text_selector.xml" qualifiers="" type="drawable"/><file name="drop_down_shadow" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable-nodpi\drop_down_shadow.9.png" qualifiers="nodpi-v4" type="drawable"/><file name="ic_arrow_drop_down_black_24dp" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\drawable-xxhdpi\ic_arrow_drop_down_black_24dp.png" qualifiers="xxhdpi-v4" type="drawable"/><file name="bottom_navigation" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\bottom_navigation.xml" qualifiers="" type="layout"/><file name="dialog_z_loading" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\dialog_z_loading.xml" qualifiers="" type="layout"/><file name="spinner_list_item" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\spinner_list_item.xml" qualifiers="" type="layout"/><file name="support_recycler_view_item" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\support_recycler_view_item.xml" qualifiers="" type="layout"/><file name="support_recycler_view_load_more" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\support_recycler_view_load_more.xml" qualifiers="" type="layout"/><file name="tab_part_view_button" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\tab_part_view_button.xml" qualifiers="" type="layout"/><file name="tab_view_bottom_layout" path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\layout\tab_view_bottom_layout.xml" qualifiers="" type="layout"/><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\colors.xml" qualifiers=""><color name="colorTextTitle">#333333</color><color name="colorTextContent">#444444</color><color name="colorTextAssistant">#888888</color><color name="colorBackground">#FFFFFF</color><color name="colorBackgroundDark">#f2f2f2</color><color name="colorDivision">#33aaaaaa</color><color name="z_title_color">#2DAE98</color><color name="z_transparent">#00000000</color><color name="z_dialog_bg_color">#FFFFFF</color><color name="dark">#0E1011</color><color name="black">#000000</color><color name="green">#FF5FB241</color><color name="blue">#FF0782E2</color></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\nice_spinner_attrs.xml" qualifiers=""><attr format="enum" name="popupTextAlignment">
+        <enum name="start" value="0"/>
+        <enum name="end" value="1"/>
+        <enum name="center" value="2"/>
+    </attr><declare-styleable name="NiceSpinner">
+        <attr format="color" name="arrowTint"/>
+        <attr format="boolean" name="hideArrow"/>
+        <attr format="reference|color" name="arrowDrawable"/>
+        <attr format="dimension" name="dropDownListPaddingBottom"/>
+        <attr format="integer" name="backgroundSelector"/>
+        <attr format="color" name="textTint"/>
+        <attr name="popupTextAlignment"/>
+        <attr format="reference" name="entries"/>
+    </declare-styleable></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\nice_spinner_dimens.xml" qualifiers=""><dimen name="three_grid_unit">24dp</dimen><dimen name="one_and_a_half_grid_unit">12dp</dimen></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\styles.xml" qualifiers=""><style name="alert_dialog" parent="android:Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowBackground">@color/z_transparent</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style><style name="TextD1AE8112">
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/color_D1AE81</item>
+    </style></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\swipe_rv_colors.xml" qualifiers=""><color name="support_recycler_color_text_gray">#FF777777</color><color name="support_recycler_color_loading_color1">#55777777</color><color name="support_recycler_color_loading_color2">#B1777777</color><color name="support_recycler_color_loading_color3">#FF777777</color></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\swipe_rv_strings.xml" qualifiers=""><string name="support_recycler_data_empty">There is no data</string><string name="support_recycler_more_not">No more data</string><string name="support_recycler_click_load_more">Click to load more</string><string name="support_recycler_load_error">Error, please try again</string><string name="support_recycler_load_more_message">Loading, please wait later</string></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\swpie_rv_attrs.xml" qualifiers=""><declare-styleable name="SwipeMenuLayout">
+        <attr format="reference|integer" name="leftViewId"/>
+        <attr format="reference|integer" name="rightViewId"/>
+        <attr format="reference|integer" name="contentViewId"/>
+    </declare-styleable></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_circke_image_attrs.xml" qualifiers=""><declare-styleable name="CircleImageView">
+        <attr format="dimension" name="civ_border_width"/>
+        <attr format="color" name="civ_border_color"/>
+        <attr format="boolean" name="civ_border_overlay"/>
+        <attr format="color" name="civ_circle_background_color"/>
+    </declare-styleable></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_loading_attrs.xml" qualifiers=""><declare-styleable name="ZLoadingView">
+        <attr name="z_type">
+            <enum name="CircleBuilder" value="0"/>
+            <enum name="ClockBuilder" value="1"/>
+            <enum name="StarBuilder" value="2"/>
+            <enum name="LeafBuilder" value="3"/>
+            <enum name="DoubleCircleBuilder" value="4"/>
+            <enum name="PacManBuilder" value="5"/>
+            <enum name="ElasticBallBuilder" value="6"/>
+            <enum name="InfectionBallBuilder" value="7"/>
+            <enum name="IntertwineBuilder" value="8"/>
+            <enum name="TextBuilder" value="9"/>
+            <enum name="SearchPathBuilder" value="10"/>
+            <enum name="RotateCircleBuilder" value="11"/>
+            <enum name="SingleCircleBuilder" value="12"/>
+
+            <enum name="SnakeCircleBuilder" value="13"/>
+            <enum name="StairsPathBuilder" value="14"/>
+            <enum name="MusicPathBuilder" value="15"/>
+            <enum name="StairsRectBuilder" value="16"/>
+            <enum name="ChartRectBuilder" value="17"/>
+        </attr>
+        <attr format="color" name="z_color"/>
+        <attr format="float" name="z_duration_percent"/>
+    </declare-styleable><declare-styleable name="ZLoadingTextView">
+        <attr format="string" name="z_text"/>
+    </declare-styleable></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_navigation_color.xml" qualifiers=""><color name="itemActiveColorWithoutColoredBackground">#2DAE98</color><color name="colorActive">#FFFFFF</color><color name="colorInactive">#d2d0d1</color><color name="withoutColoredBackground">#757575</color><color name="white">#ffffff</color><color name="color_D1AE81">#D1AE81</color></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_navigation_dimen.xml" qualifiers=""><dimen name="bottom_navigation_elevation">8dp</dimen><dimen name="bottom_navigation_shadow_height">8dp</dimen><dimen name="bottom_navigation_shadow_height_without_colored_background">4dp</dimen><dimen name="bottom_navigation_min_width">104dp</dimen><dimen name="bottom_navigation_max_width">168dp</dimen><dimen name="bottom_navigation_height">56dp</dimen><dimen name="bottom_navigation_icon">20dp</dimen><dimen name="bottom_navigation_padding_top_active">5dp</dimen><dimen name="bottom_navigation_padding_top_inactive">9dp</dimen><dimen name="bottom_navigation_padding_top_inactive_without_text">16dp</dimen><dimen name="bottom_navigation_padding_bottom">7dp</dimen><dimen name="bottom_navigation_padding_left">12dp</dimen><dimen name="bottom_navigation_padding_right">12dp</dimen><dimen name="bottom_navigation_text_size_active">14sp</dimen><dimen name="bottom_navigation_text_size_inactive">12sp</dimen></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_table_dimen.xml" qualifiers=""><dimen name="bubble_padding_top">2dp</dimen><dimen name="bubble_padding_right">2dp</dimen></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_zrl_attrs.xml" qualifiers=""><attr format="dimension" name="zrlDrawableSize"/><attr format="dimension" name="zrlDrawableArrowSize"/><attr format="dimension" name="zrlDrawableProgressSize"/><attr format="dimension" name="zrlDrawableMarginRight"/><attr format="dimension" name="zrlTextSizeTitle"/><attr format="dimension" name="zrlTextSizeTime"/><attr format="integer" name="zrlFinishDuration"/><attr format="color" name="zrlPrimaryColor"/><attr format="color" name="zrlAccentColor"/><attr format="reference" name="zrlDrawableArrow"/><attr format="reference" name="zrlDrawableProgress"/><attr format="boolean" name="zrlEnableHorizontalDrag"/><attr format="enum" name="zrlClassicsSpinnerStyle">
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
+    </attr><attr format="enum" name="layout_zrlSpinnerStyle">
+        <enum name="Translate" value="0"/>
+        <enum name="Scale" value="1"/>
+        <enum name="FixedBehind" value="2"/>
+        <enum name="FixedFront" value="3"/>
+        <enum name="MatchLayout" value="4"/>
+    </attr><declare-styleable name="ZRefreshLayout">
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr format="integer" name="zrlReboundDuration"/>
+        <attr format="dimension" name="zrlHeaderHeight"/>
+        <attr format="dimension" name="zrlFooterHeight"/>
+        <attr format="dimension" name="zrlHeaderInsetStart"/>
+        <attr format="dimension" name="zrlFooterInsetStart"/>
+        <attr format="float" name="zrlDragRate"/>
+        <attr format="float" name="zrlHeaderMaxDragRate"/>
+        <attr format="float" name="zrlFooterMaxDragRate"/>
+        <attr format="float" name="zrlHeaderTriggerRate"/>
+        <attr format="float" name="zrlFooterTriggerRate"/>
+        <attr format="boolean" name="zrlEnableRefresh"/>
+        <attr format="boolean" name="zrlEnableLoadMore"/>
+        <attr format="boolean" name="zrlEnableHeaderTranslationContent"/>
+        <attr format="boolean" name="zrlEnableFooterTranslationContent"/>
+        <attr format="reference" name="zrlHeaderTranslationViewId"/>
+        <attr format="reference" name="zrlFooterTranslationViewId"/>
+        <attr format="boolean" name="zrlEnablePreviewInEditMode"/>
+        <attr format="boolean" name="zrlEnableAutoLoadMore"/>
+        <attr format="boolean" name="zrlEnableOverScrollBounce"/>
+        <attr format="boolean" name="zrlEnablePureScrollMode"/>
+        <attr format="boolean" name="zrlEnableNestedScrolling"/>
+        <attr format="boolean" name="zrlEnableScrollContentWhenLoaded"/>
+        <attr format="boolean" name="zrlEnableScrollContentWhenRefreshed"/>
+        <attr format="boolean" name="zrlEnableLoadMoreWhenContentNotFull"/>
+        <attr format="boolean" name="zrlEnableFooterFollowWhenLoadFinished"/>
+        <attr format="boolean" name="zrlEnableClipHeaderWhenFixedBehind"/>
+        <attr format="boolean" name="zrlEnableClipFooterWhenFixedBehind"/>
+        <attr format="boolean" name="zrlEnableOverScrollDrag"/>
+        <attr format="boolean" name="zrlDisableContentWhenRefresh"/>
+        <attr format="boolean" name="zrlDisableContentWhenLoading"/>
+        <attr format="reference" name="zrlFixedHeaderViewId"/>
+        <attr format="reference" name="zrlFixedFooterViewId"/>
+    </declare-styleable><declare-styleable name="ZRefreshLayout_Layout">
+        <attr name="layout_zrlSpinnerStyle"/>
+        <attr format="color" name="layout_zrlBackgroundColor"/>
+    </declare-styleable><declare-styleable name="BezierRadarHeader">
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlEnableHorizontalDrag"/>
+    </declare-styleable><declare-styleable name="BallPulseFooter">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr format="color" name="zrlAnimatingColor"/>
+        <attr format="color" name="zrlNormalColor"/>
+    </declare-styleable><declare-styleable name="ClassicsHeader">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlFinishDuration"/>
+        <attr name="zrlDrawableArrow"/>
+        <attr name="zrlDrawableProgress"/>
+        <attr name="zrlDrawableMarginRight"/>
+        <attr name="zrlDrawableSize"/>
+        <attr name="zrlDrawableArrowSize"/>
+        <attr name="zrlDrawableProgressSize"/>
+        <attr name="zrlTitleTextSize"/>
+        <attr name="zrlTimeTextSize"/>
+        <attr format="dimension" name="zrlTopTextTimeMargin"/>
+        <attr format="boolean" name="zrlEnableLastTime"/>
+    </declare-styleable><declare-styleable name="ClassicsFooter">
+        <attr name="zrlClassicsSpinnerStyle"/>
+        <attr name="zrlPrimaryColor"/>
+        <attr name="zrlAccentColor"/>
+        <attr name="zrlFinishDuration"/>
+        <attr name="zrlTitleTextSize"/>
+        <attr name="zrlDrawableArrow"/>
+        <attr name="zrlDrawableProgress"/>
+        <attr name="zrlDrawableMarginRight"/>
+        <attr name="zrlDrawableSize"/>
+        <attr name="zrlDrawableArrowSize"/>
+        <attr name="zrlDrawableProgressSize"/>
+    </declare-styleable><declare-styleable name="TwoLevelHeader">
+        <attr format="float" name="zrlMaxRage"/>
+        <attr format="float" name="zrlFloorRage"/>
+        <attr format="float" name="zrlRefreshRage"/>
+        <attr format="integer" name="zrlFloorDuration"/>
+        <attr format="boolean" name="zrlEnableTwoLevel"/>
+        <attr format="boolean" name="zrlEnablePullToCloseTwoLevel"/>
+    </declare-styleable><declare-styleable name="MaterialHeader">
+        <attr format="color" name="mhPrimaryColor"/>
+        <attr format="color" name="mhShadowColor"/>
+        <attr format="dimension" name="mhShadowRadius"/>
+        <attr format="boolean" name="mhShowBezierWave"/>
+    </declare-styleable></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values\zero_zrl_strings.xml" qualifiers=""><string name="zrl_header_pulling">Pull Down To Refresh</string><string name="zrl_header_release">Release To Refresh</string><string name="zrl_header_refreshing">Refreshing…</string><string name="zrl_header_loading">Loading…</string><string name="zrl_header_finish">Refresh Success</string><string name="zrl_header_failed">Refresh Failed</string><string name="zrl_header_update">\'Last Update\' M-d HH:mm</string><string name="zrl_header_secondary">Release To Second Floor</string><string name="zrl_footer_pulling">Pull Up To Load More</string><string name="zrl_footer_release">Release To Load More</string><string name="zrl_footer_loading">Loading…</string><string name="zrl_footer_refreshing">Refreshing…</string><string name="zrl_footer_finish">Load Success</string><string name="zrl_footer_failed">Load Failed</string><string name="zrl_footer_nothing">No More Data</string><string name="zrl_content_empty">The content view in ZRefreshLayout is empty. Do you forget to add it in xml layout file?</string><string formatted="false" name="zrl_component_falsify">%s falsify area,\n Represents the height[%.1fdp] of drag at run time,\n It does not show anything.</string></file><file path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\main\res\values-zh\zero_zrl_strings.xml" qualifiers="zh"><string name="zrl_header_pulling">下拉可以刷新</string><string name="zrl_header_refreshing">正在刷新…</string><string name="zrl_header_loading">正在加载…</string><string name="zrl_header_release">释放立即刷新</string><string name="zrl_header_finish">刷新完成</string><string name="zrl_header_failed">刷新失败</string><string name="zrl_header_update">上次更新 M-d HH:mm</string><string name="zrl_header_secondary">释放进入二楼</string><string name="zrl_footer_pulling">上拉加载更多</string><string name="zrl_footer_release">释放立即加载</string><string name="zrl_footer_loading">正在加载…</string><string name="zrl_footer_refreshing">正在刷新…</string><string name="zrl_footer_finish">加载完成</string><string name="zrl_footer_failed">加载失败</string><string name="zrl_footer_nothing">没有更多数据了</string><string name="zrl_content_empty">ZRefreshLayout中没有找到内容视图。您是否忘记在xml布局文件中添加？</string><string formatted="false" name="zrl_component_falsify">%s 虚假区域\n代表运行时拖动的高度【%.1fdp】 \n而不会显示任何东西</string></file></source><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\build\generated\res\rs\debug"/><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\build\generated\res\resValues\debug"/></dataSet><dataSet config="debug$Generated" generated="true"><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\debug\res"/></dataSet><dataSet config="debug" generated-set="debug$Generated"><source path="C:\Users\Administrator\Desktop\ProSdk_APP\Zero\src\debug\res"/></dataSet><mergedItems><configuration qualifiers=""><declare-styleable name="ZRefreshLayout"><attr name="zrlPrimaryColor"/><attr name="zrlAccentColor"/><attr format="integer" name="zrlReboundDuration"/><attr format="dimension" name="zrlHeaderHeight"/><attr format="dimension" name="zrlFooterHeight"/><attr format="dimension" name="zrlHeaderInsetStart"/><attr format="dimension" name="zrlFooterInsetStart"/><attr format="float" name="zrlDragRate"/><attr format="float" name="zrlHeaderMaxDragRate"/><attr format="float" name="zrlFooterMaxDragRate"/><attr format="float" name="zrlHeaderTriggerRate"/><attr format="float" name="zrlFooterTriggerRate"/><attr format="boolean" name="zrlEnableRefresh"/><attr format="boolean" name="zrlEnableLoadMore"/><attr format="boolean" name="zrlEnableHeaderTranslationContent"/><attr format="boolean" name="zrlEnableFooterTranslationContent"/><attr format="reference" name="zrlHeaderTranslationViewId"/><attr format="reference" name="zrlFooterTranslationViewId"/><attr format="boolean" name="zrlEnablePreviewInEditMode"/><attr format="boolean" name="zrlEnableAutoLoadMore"/><attr format="boolean" name="zrlEnableOverScrollBounce"/><attr format="boolean" name="zrlEnablePureScrollMode"/><attr format="boolean" name="zrlEnableNestedScrolling"/><attr format="boolean" name="zrlEnableScrollContentWhenLoaded"/><attr format="boolean" name="zrlEnableScrollContentWhenRefreshed"/><attr format="boolean" name="zrlEnableLoadMoreWhenContentNotFull"/><attr format="boolean" name="zrlEnableFooterFollowWhenLoadFinished"/><attr format="boolean" name="zrlEnableClipHeaderWhenFixedBehind"/><attr format="boolean" name="zrlEnableClipFooterWhenFixedBehind"/><attr format="boolean" name="zrlEnableOverScrollDrag"/><attr format="boolean" name="zrlDisableContentWhenRefresh"/><attr format="boolean" name="zrlDisableContentWhenLoading"/><attr format="reference" name="zrlFixedHeaderViewId"/><attr format="reference" name="zrlFixedFooterViewId"/></declare-styleable><declare-styleable name="NiceSpinner"><attr format="color" name="arrowTint"/><attr format="boolean" name="hideArrow"/><attr format="reference|color" name="arrowDrawable"/><attr format="dimension" name="dropDownListPaddingBottom"/><attr format="integer" name="backgroundSelector"/><attr format="color" name="textTint"/><attr name="popupTextAlignment"/><attr format="reference" name="entries"/></declare-styleable><declare-styleable name="ClassicsHeader"><attr name="zrlClassicsSpinnerStyle"/><attr name="zrlPrimaryColor"/><attr name="zrlAccentColor"/><attr name="zrlFinishDuration"/><attr name="zrlDrawableArrow"/><attr name="zrlDrawableProgress"/><attr name="zrlDrawableMarginRight"/><attr name="zrlDrawableSize"/><attr name="zrlDrawableArrowSize"/><attr name="zrlDrawableProgressSize"/><attr name="zrlTitleTextSize"/><attr name="zrlTimeTextSize"/><attr format="dimension" name="zrlTopTextTimeMargin"/><attr format="boolean" name="zrlEnableLastTime"/></declare-styleable><declare-styleable name="ZRefreshLayout_Layout"><attr name="layout_zrlSpinnerStyle"/><attr format="color" name="layout_zrlBackgroundColor"/></declare-styleable><declare-styleable name="ZLoadingView"><attr name="z_type">
+            <enum name="CircleBuilder" value="0"/>
+            <enum name="ClockBuilder" value="1"/>
+            <enum name="StarBuilder" value="2"/>
+            <enum name="LeafBuilder" value="3"/>
+            <enum name="DoubleCircleBuilder" value="4"/>
+            <enum name="PacManBuilder" value="5"/>
+            <enum name="ElasticBallBuilder" value="6"/>
+            <enum name="InfectionBallBuilder" value="7"/>
+            <enum name="IntertwineBuilder" value="8"/>
+            <enum name="TextBuilder" value="9"/>
+            <enum name="SearchPathBuilder" value="10"/>
+            <enum name="RotateCircleBuilder" value="11"/>
+            <enum name="SingleCircleBuilder" value="12"/>
+
+            <enum name="SnakeCircleBuilder" value="13"/>
+            <enum name="StairsPathBuilder" value="14"/>
+            <enum name="MusicPathBuilder" value="15"/>
+            <enum name="StairsRectBuilder" value="16"/>
+            <enum name="ChartRectBuilder" value="17"/>
+        </attr><attr format="color" name="z_color"/><attr format="float" name="z_duration_percent"/></declare-styleable><declare-styleable name="ClassicsFooter"><attr name="zrlClassicsSpinnerStyle"/><attr name="zrlPrimaryColor"/><attr name="zrlAccentColor"/><attr name="zrlFinishDuration"/><attr name="zrlTitleTextSize"/><attr name="zrlDrawableArrow"/><attr name="zrlDrawableProgress"/><attr name="zrlDrawableMarginRight"/><attr name="zrlDrawableSize"/><attr name="zrlDrawableArrowSize"/><attr name="zrlDrawableProgressSize"/></declare-styleable><declare-styleable name="BallPulseFooter"><attr name="zrlClassicsSpinnerStyle"/><attr format="color" name="zrlAnimatingColor"/><attr format="color" name="zrlNormalColor"/></declare-styleable><declare-styleable name="CircleImageView"><attr format="dimension" name="civ_border_width"/><attr format="color" name="civ_border_color"/><attr format="boolean" name="civ_border_overlay"/><attr format="color" name="civ_circle_background_color"/></declare-styleable><declare-styleable name="MaterialHeader"><attr format="color" name="mhPrimaryColor"/><attr format="color" name="mhShadowColor"/><attr format="dimension" name="mhShadowRadius"/><attr format="boolean" name="mhShowBezierWave"/></declare-styleable><declare-styleable name="TwoLevelHeader"><attr format="float" name="zrlMaxRage"/><attr format="float" name="zrlFloorRage"/><attr format="float" name="zrlRefreshRage"/><attr format="integer" name="zrlFloorDuration"/><attr format="boolean" name="zrlEnableTwoLevel"/><attr format="boolean" name="zrlEnablePullToCloseTwoLevel"/></declare-styleable><declare-styleable name="ZLoadingTextView"><attr format="string" name="z_text"/></declare-styleable><declare-styleable name="BezierRadarHeader"><attr name="zrlPrimaryColor"/><attr name="zrlAccentColor"/><attr name="zrlEnableHorizontalDrag"/></declare-styleable><declare-styleable name="SwipeMenuLayout"><attr format="reference|integer" name="leftViewId"/><attr format="reference|integer" name="rightViewId"/><attr format="reference|integer" name="contentViewId"/></declare-styleable></configuration></mergedItems></merger>
