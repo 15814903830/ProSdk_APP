@@ -1,5 +1,7 @@
 package com.unisound.media.example.musice;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -10,15 +12,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.unisound.media.example.base.MusiceBase;
 import com.unisound.media.example.okhttp.AudioUtil;
 import com.unisound.watchassist.R;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +47,9 @@ public class MusiceActivity extends AppCompatActivity {
     int maxVolume;
     int currentVolume;
     private AudioManager mAudioManager;
+    private ImageView iv_musicimg;
+    private ImageView iv_return;
+    private ObjectAnimator objectAnimatorRotate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +73,13 @@ public class MusiceActivity extends AppCompatActivity {
         ivxia = findViewById(R.id.iv_xia);
         tvname = findViewById(R.id.tv_name);
         pb_jdt = findViewById(R.id.pb_jdt);
-
-
+        iv_musicimg = findViewById(R.id.iv_music);
+        iv_return=findViewById(R.id.iv_return);
+        objectAnimatorRotate = ObjectAnimator.ofFloat(iv_musicimg, "rotation", 0f, 360f,  720f, 1080f,1440f,1800f,2160f,2520f,2880f,3240f);
+        objectAnimatorRotate.setInterpolator(new AccelerateInterpolator());//动画插值
+        objectAnimatorRotate.setDuration(50000);//动画时间
+        objectAnimatorRotate.setRepeatCount(Animation.INFINITE);
+        objectAnimatorRotate.start();
         //下一曲
         ivxia.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,7 +112,7 @@ public class MusiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-                if (maxVolume>currentVolume)
+                if (maxVolume > currentVolume)
                     AudioUtil.soundUP(MusiceActivity.this);
 
                 if (image < 6) {
@@ -112,7 +127,7 @@ public class MusiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 currentVolume = mAudioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-                if (0<currentVolume)
+                if (0 < currentVolume)
                     AudioUtil.soundDOWN(MusiceActivity.this);
                 if (image > 0) {
                     image--;
@@ -136,6 +151,12 @@ public class MusiceActivity extends AppCompatActivity {
 
             }
         });
+        iv_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -143,6 +164,11 @@ public class MusiceActivity extends AppCompatActivity {
         super.onDestroy();
         if (mediaPlayer != null)
             mediaPlayer.release();
+
+        if (objectAnimatorRotate != null)
+            objectAnimatorRotate.clone();
+        objectAnimatorRotate = null;
+
     }
 
 
@@ -152,7 +178,7 @@ public class MusiceActivity extends AppCompatActivity {
 
     /**
      * 解析json数据,播放第一首歌曲
-     * */
+     */
     private void getdatejson() {
         try {
             JSONObject jsonObject = new JSONObject(getIntent().getStringExtra("response"));
@@ -184,7 +210,7 @@ public class MusiceActivity extends AppCompatActivity {
 
     /**
      * 音量
-     * */
+     */
     private void inttvolume() {
         //获取系统的Audio管理者
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
@@ -197,7 +223,7 @@ public class MusiceActivity extends AppCompatActivity {
 
     /**
      * 播放音乐
-     * */
+     */
     private void playmusice(int i) {
         try {
             mediaPlayer = new MediaPlayer();

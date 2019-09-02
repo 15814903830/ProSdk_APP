@@ -1,22 +1,32 @@
 package com.unisound.media.example;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.unisound.media.example.listvoice.ListTextAsrActivity;
 import com.unisound.media.example.musice.MusiceActivity;
 import com.unisound.media.example.okhttp.HttpCallBack;
 import com.unisound.media.example.okhttp.OkHttpUtils;
@@ -42,7 +52,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TextAsrActivity extends AppCompatActivity implements IAsrResultListener, HttpCallBack {
+public class TextAsrActivity extends BasicMainActivity implements IAsrResultListener, HttpCallBack {
   private LinearLayout llFrontModel;
   private LinearLayout llBackModel;
   private LinearLayout llVoiceName;
@@ -60,6 +70,8 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
   private EditText etFrontSil;
   private EditText etDefaultName;
   private EditText etSampleRate;
+  private ImageView returntext;
+   private Context context;
 
   private HttpCallBack mHttpCallBack;
   private static final String TAG = "TextAsrActivity";
@@ -67,29 +79,55 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
   private UnisoundTtsEngine unisoundTtsEngine;
   private TextView textResult;
   private int playModeChoice = 0;
+  private boolean onetext=false;
+  private ImageView butStartAsr;
   private List<String> frontModel = new ArrayList<>();
   private List<String> backModel = new ArrayList<>();
   private boolean aBooleanstartforcancel=true;
   private String url="http://106.14.226.237:8080/service/iss-test?platform=&screen=&text=" ;
   private String url2= "&appkey=3dcddlnx7ddlb2xatjxtbtxha6xah7iogajzkqie&scenario=child&filterName=search&ver=3.0&udid=d1cee3ae6ff46&returnType=json&appsig=A6702357B7904B43907E7803665FBD5FE08C57A5&appver=1.0.1&city=%E6%B7%B1%E5%9C%B3&history=&time=&voiceid=8AAAD808EDF04697AF3C74C22DC4CF0E&gps=&method=iss.getTalk&dpi=&viewId=";
-
-
+  private MediaPlayer mediaPlayer;
+    private ObjectAnimator mObjectAnimator,mObjectAnimator2,mObjectAnimator3;
+    private AnimatorSet animationSet;
+  @SuppressLint("WrongConstant")
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.layout_text_asr);
     initView();
+    context=this;
     mHttpCallBack=this;
     textResult = findViewById(R.id.textResult);
-    unisoundAsrEngine = VoicePresenter.getInstance().getUnisoundAsrEngine();
+    returntext=findViewById(R.id.iv_return);
+      butStartAsr=findViewById(R.id.butStartAsr);
+    returntext.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        startActivity(new Intent(context, ListTextAsrActivity.class));
+      }
+    });
+
+
+      mObjectAnimator = ObjectAnimator.ofFloat(butStartAsr, "scaleY", 1f,0.8f, 0.7f,1f);
+    mObjectAnimator.setRepeatCount(500);
+    mObjectAnimator.setRepeatMode(ValueAnimator.INFINITE);
+
+      mObjectAnimator2 = ObjectAnimator.ofFloat(butStartAsr, "scaleX", 1f,0.8f, 0.7f,1f);
+    mObjectAnimator2.setRepeatCount(500);
+    mObjectAnimator2.setRepeatMode(ValueAnimator.INFINITE);
+      animationSet = new AnimatorSet();
+      animationSet.setDuration(2000L);
+      animationSet.playTogether(mObjectAnimator,mObjectAnimator2);
+    animationSet.start();
+
+
+              unisoundAsrEngine = VoicePresenter.getInstance().getUnisoundAsrEngine();
     VoicePresenter.getInstance().setAsrListener(this);
     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_SERVER_VAD_ENABLE, false);
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_NLU_ENABLE, false);
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_INIT_MODE, UnisoundAsrInitMode.ONLINE);
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_USE_PUNCTUATED, true);
-
     unisoundTtsEngine = VoicePresenter.getInstance().getUnisoundTtsEngine();
-
   }
 
   private void initView() {
@@ -120,15 +158,15 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
 
 
 
-
-
   public void onStartAsr(View v) {
     if (aBooleanstartforcancel){//第一次清空文本
+      animationSet.end();
       textResult.setText("");
       unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_ASR_MODE, UnisoundAsrMode.ONLINE);
       unisoundAsrEngine.startAsr(false);
       aBooleanstartforcancel=false;
     }else {
+      animationSet.start();
       unisoundAsrEngine.cancel();
       aBooleanstartforcancel=true;
     }
@@ -146,16 +184,17 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
         String text = jsonObject.getString("asr_recongize");
         textResult.setText(text);
       } catch (Exception e) {
-
       }
     }
+
+
   }
 
   @Override public void onEvent(int event) {
     Log.d(TAG, "onEvent:" + event);
     //3028结束
-
     //结束回调播放语音
+    if (onetext){
     if (event==3208){
       if (textResult.getText().toString().equals("")){
         //输入为空
@@ -163,7 +202,8 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
         getsemantic();
       }
     }
-
+    }
+    onetext=true;
   }
 
   @Override public void onError(int error) {
@@ -171,9 +211,11 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
   }
 
   protected void onDestroy() {
+    VoicePresenter.getInstance().release();
     super.onDestroy();
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_NLU_ENABLE, true);
     unisoundAsrEngine.cancel();
+    animationSet.clone();
   }
 
   public void startTts() {
@@ -244,12 +286,34 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
         case "cn.yunzhisheng.greeting":
           JSONObject  ANSWER = new JSONObject(jsonObject.getString("general"));
           textResult.setText(ANSWER.getString("text"));
-          startTts();
+          if (!ANSWER.optString("audio").equals("")){
+            try {
+              mediaPlayer = new MediaPlayer();
+              mediaPlayer.setDataSource(ANSWER.optString("audio"));
+              mediaPlayer.prepare();
+              mediaPlayer.start();
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+          }else {
+            startTts();
+          }
           break;
         case "cn.yunzhisheng.chat":
           JSONObject  SETTING_EXEC = new JSONObject(jsonObject.getString("general"));
           textResult.setText(SETTING_EXEC.getString("text"));
-          startTts();
+          if (!SETTING_EXEC.optString("audio").equals("")){
+            try {
+              mediaPlayer = new MediaPlayer();
+              mediaPlayer.setDataSource(SETTING_EXEC.optString("audio"));
+              mediaPlayer.prepare();
+              mediaPlayer.start();
+            } catch (IOException e) {
+              e.printStackTrace();
+            }
+          }else {
+            startTts();
+          }
           break;
         case "cn.yunzhisheng.music":// SEARCH_SONG  搜索歌曲
           Intent intent=new Intent(this,MusiceActivity.class);
@@ -261,7 +325,11 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
           intent2.putExtra("response",response);
           startActivity(intent2);
           break;
-
+        case "cn.yunzhisheng.poem":// SEARCH  诗歌
+          Intent intent3=new Intent(this,MusiceActivity.class);
+          intent3.putExtra("response",response);
+          startActivity(intent3);
+          break;
 
       }
 
@@ -291,4 +359,5 @@ public class TextAsrActivity extends AppCompatActivity implements IAsrResultList
       }
     }).start();
   }
+
 }

@@ -26,11 +26,6 @@
         <activity
             android:name="com.unisound.media.example.BasicMainActivity"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.unisound.media.example.TtsActivity"
@@ -57,13 +52,26 @@
             android:label="OneShot"
             android:screenOrientation="portrait" />
         <activity
+            android:launchMode="singleTop"
             android:name="com.unisound.media.example.TextAsrActivity"
             android:label="语音转文字"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.unisound.media.example.MedicalAsrActivity"
             android:label="医疗语音识别"
             android:screenOrientation="portrait" />
+        <activity
+            android:launchMode="singleInstance"
+            android:name="com.unisound.media.example.listvoice.ListTextAsrActivity"
+            android:label="列表对答"
+            android:screenOrientation="portrait" >
+        </activity>
     </application>
 
 </manifest>
