@@ -52,6 +52,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.unisound.media.example.timeutils.CountDownTimerService.countDownTimerService;
+
 public class TextAsrActivity extends BasicMainActivity implements IAsrResultListener, HttpCallBack {
   private LinearLayout llFrontModel;
   private LinearLayout llBackModel;
@@ -89,6 +91,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
   private MediaPlayer mediaPlayer;
     private ObjectAnimator mObjectAnimator,mObjectAnimator2,mObjectAnimator3;
     private AnimatorSet animationSet;
+
   @SuppressLint("WrongConstant")
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -99,6 +102,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
     textResult = findViewById(R.id.textResult);
     returntext=findViewById(R.id.iv_return);
       butStartAsr=findViewById(R.id.butStartAsr);
+
     returntext.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
@@ -120,7 +124,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
     animationSet.start();
 
 
-              unisoundAsrEngine = VoicePresenter.getInstance().getUnisoundAsrEngine();
+    unisoundAsrEngine = VoicePresenter.getInstance().getUnisoundAsrEngine();
     VoicePresenter.getInstance().setAsrListener(this);
     getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
     unisoundAsrEngine.setOption(AsrOption.ASR_OPTION_SERVER_VAD_ENABLE, false);
@@ -178,6 +182,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
   }
 
   @Override public void onResult(int event, String result) {
+    Log.d(TAG, "onResult: "+result);
     if (event == AsrEvent.ASR_EVENT_ASR_RESULT) {
       try {
         JSONObject jsonObject = new JSONObject(result);
@@ -219,7 +224,6 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
   }
 
   public void startTts() {
-    Log.d(TAG, "startTts" );
     unisoundTtsEngine.setTtsOption(TtsOption.TTS_OPTION_PRINT_DEBUG_LOG, true);
     unisoundTtsEngine.setTtsOption(TtsOption.TTS_PLAY_MODE,
             playModeChoice == 0 ? UnisoundTtsPlayMode.ONLINE : UnisoundTtsPlayMode.OFFLINE);
@@ -275,10 +279,6 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
   @Override
   public void onHandlerMessageCallback(String response, int requestId) {
     try {
-      // ANSWER  回答模式
-      // SETTING_EXEC  设置执行
-      // SEARCH_SONG  搜索歌曲
-      // SEARCH_RANDOM  随机搜索
         Log.d(TAG, response );
       JSONObject  jsonObject = new JSONObject(response);
       ToolsCode.CODE=jsonObject.getString("service");
@@ -299,7 +299,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
             startTts();
           }
           break;
-        case "cn.yunzhisheng.chat":
+        case "cn.yunzhisheng.chat"://对答
           JSONObject  SETTING_EXEC = new JSONObject(jsonObject.getString("general"));
           textResult.setText(SETTING_EXEC.getString("text"));
           if (!SETTING_EXEC.optString("audio").equals("")){
@@ -340,7 +340,7 @@ public class TextAsrActivity extends BasicMainActivity implements IAsrResultList
   }
 
   @SuppressLint("HandlerLeak")
-  private Handler mHandler = new Handler() {
+  private Handler mHandler =  new Handler() {
     @Override
     public void handleMessage(Message msg) {
       super.handleMessage(msg);

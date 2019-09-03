@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 import com.unisound.media.example.base.MusiceBase;
 import com.unisound.media.example.okhttp.AudioUtil;
+import com.unisound.media.example.timeutils.CountDownTimerListener;
+import com.unisound.media.example.timeutils.CountDownTimerService;
 import com.unisound.watchassist.R;
 
 import org.json.JSONArray;
@@ -29,6 +31,8 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.unisound.media.example.timeutils.CountDownTimerService.countDownTimerService;
 
 
 public class MusiceActivity extends AppCompatActivity {
@@ -51,6 +55,28 @@ public class MusiceActivity extends AppCompatActivity {
     private ImageView iv_return;
     private ObjectAnimator objectAnimatorRotate;
 
+    private long timer_unit = 1000;
+    private  int playtime=0;
+    private long service_distination_total;
+    private CountDownTimerService countDownTimerService;
+    private int handtime;
+    private Handler mHandler = new Handler(){
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case 2:
+                    handtime= playtime-(int) (countDownTimerService.getCountingTime())/1000;
+                    Log.e("time",""+handtime);
+                    pb_jdt.setProgress(handtime);
+                    break;
+                case 1:
+                    countDownTimerService.pauseCountDown();
+                    break;
+            }
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +85,16 @@ public class MusiceActivity extends AppCompatActivity {
         inttvolume();//音量
         getdatejson();//解析json数据,播放第一首歌曲
 
-
     }
+    private class MyCountDownLisener implements CountDownTimerListener {
 
+        @Override
+        public void onChange() {
+            if (startforpause){
+                mHandler.sendEmptyMessage(2);
+            }
+        }
+    }
 
     private void intiview() {
         textView = findViewById(R.id.textsss);
@@ -90,8 +123,14 @@ public class MusiceActivity extends AppCompatActivity {
                     playmusice(++muscie);
                     textView.setText(list.get(muscie).getDisplayName());
                     tvname.setText(list.get(muscie).getArtist());
+                    countDownTimerService.stopCountDown();
+
+                    startforpause = true;
+                    iv_start_pause.setSelected(false);
                 }
+                handtime=0;
             }
+
         });
         //上一曲
         ivshan.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +142,11 @@ public class MusiceActivity extends AppCompatActivity {
                     playmusice(--muscie);
                     textView.setText(list.get(muscie).getDisplayName());
                     tvname.setText(list.get(muscie).getArtist());
+                    handtime=0;
+                    countDownTimerService.stopCountDown();
 
+                    startforpause = true;
+                    iv_start_pause.setSelected(false);
                 }
             }
         });
@@ -140,10 +183,12 @@ public class MusiceActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (startforpause) {//暂停
+                    countDownTimerService.pauseCountDown();
                     startforpause = false;
                     iv_start_pause.setSelected(true);
                     mediaPlayer.pause();
                 } else {//继续播放
+                    countDownTimerService.startCountDown();
                     mediaPlayer.start();
                     startforpause = true;
                     iv_start_pause.setSelected(false);
@@ -204,7 +249,6 @@ public class MusiceActivity extends AppCompatActivity {
         tvname.setText(list.get(0).getArtist());
         if (list.size() != 0) {
             playmusice(muscie);
-
         }
     }
 
@@ -225,6 +269,20 @@ public class MusiceActivity extends AppCompatActivity {
      * 播放音乐
      */
     private void playmusice(int i) {
+        MediaPlayer md = new MediaPlayer();
+        try {
+            md.setDataSource(list.get(i).getUrl());//获取音频时长
+            md.prepare();
+            service_distination_total=timer_unit*( md.getDuration()/1000);
+            playtime=md.getDuration()/1000;
+            pb_jdt.setMax(playtime);
+            countDownTimerService=null;
+            countDownTimerService = CountDownTimerService.getInstance(new MyCountDownLisener()
+                    ,service_distination_total);
+            countDownTimerService.startCountDown();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         try {
             mediaPlayer = new MediaPlayer();
             mediaPlayer.setDataSource(list.get(i).getUrl());

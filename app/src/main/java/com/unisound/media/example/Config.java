@@ -9,8 +9,8 @@ public class Config {
 
   }
 
-  public static final String APP_KEY = "mpd5qzdwvowi26grfp76mf3igpw7mhspznrdujap";
-  public static final String APP_SECRET = "49099505eeadcd49de9218b75c6f7120";
+  public static final String APP_KEY = "pohygvuxtkeojpmdrelijzjj5axlzwaldweolfaf";
+  public static final String APP_SECRET = "453d70af4992b8cd05eab1d873241d92";
 
   public static final String MEDICAL_APP_KEY = "45gn7md5n44aak7a57rdjud3b5l4xdgv75saomys";
   public static final String MEDICAL_APP_SECRET = "ba24a917a38e11e49c6fb82a72e0d896";
